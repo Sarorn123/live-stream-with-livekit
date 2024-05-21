@@ -1,14 +1,4 @@
-# LiveKit Livestreaming Demo
-
-![alt text](demo-screenshot.png)
-
-This is a demo app for livestreaming via RTMP or WHIP using LiveKit. One user is a broadcaster who gets an RTMP/WHIP for streaming (eg, via OBS). Other users can view their stream and chat. We also let you broadcast directly from your device from the "Host" page.
-
-Today most livestreams experience a 5–30 second lag, which is evident in the delay it takes for streamers to respond to chats. Those streams use HLS, which leverages existing CDNs by uploading 5–30 second video chunks, which clients download one chunk at a time. HLS is hugely scalable, but it comes with latency.
-
-LiveKit is a sort of WebRTC CDN, achieving sub-100ms latency for audiences of 1000 or 100,000 by streaming video over backbone Internet connections and only going over the public Internet for the last mile (that is, delivery to connected clients). This enables true real-time, large-scale events, where anyone and everyone can participate.
-
-This sample app only leverages the following technologies:
+# Streaming App With Livekit
 
 - [Next.js 14](https://nextjs.org)
 - [Tailwind CSS](https://tailwindcss.com)
@@ -22,17 +12,6 @@ Clone the repo and install dependencies:
 git clone git@github.com:livekit-examples/livestream.git
 cd livestream
 npm install
-```
-
-Create a new LiveKit project at <https://cloud.livekit.io>. Then create a new key in your [project settings](https://cloud.livekit.io/projects/p_/settings/keys).
-
-Create a new `.env.development` file and add your new API key and secret as well as your project's WebSocket URL (found at the top of <https://cloud.livekit.io>):
-
-```
-LIVEKIT_API_KEY=<your api key>
-LIVEKIT_API_SECRET=<your api secret>
-LIVEKIT_API_URL=https://<your-project>.livekit.cloud
-NEXT_PUBLIC_LIVEKIT_WS_URL=wss://<your-project>.livekit.cloud
 ```
 
 Then run the development server:
