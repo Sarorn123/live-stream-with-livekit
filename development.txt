@@ -1,0 +1,1 @@
+ngrok http --domain=smashing-ladybug-vaguely.ngrok-free.app 3000
